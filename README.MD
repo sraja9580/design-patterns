@@ -8,8 +8,10 @@
 * [J2EE Desing Patterns](#j2ee-design-patterns)
 	
 # Creational Patterns
-* [Singleton](#singleton)
+* [Singleton](#singleton-pattern)
+* [Factory](#factory-pattern)
 ## Singleton
+Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machine.
 * Make Constructor private
 * Create static variable to hold the instance - make it volatile
 * Static Method to get singleton object
@@ -52,7 +54,7 @@ public Object clone() throws CloneNotSupportedException {
 }	
 ```
 **Handle Serialization** <br>
-_When we desrialize the object from file new object will be created, we can avoid this by overriding **readResolve** of **Serializable** interface
+When we desrialize the object from file new object will be created, we can avoid this by overriding **readResolve** of **Serializable** interface
 ```
 public Object readResolve() {
 	return getThreadSafeInstance();
@@ -103,3 +105,6 @@ public class LoggerUtil implements Cloneable,Serializable{
 }
 
 ```
+## Factory Pattern
+ Factory pattern, we create object without exposing the creation logic to client and the client use the same common interface to create new type of object.
+ A factory pattern is one of the core design principles to create an object, allowing clients to create objects of a library(explained below) in a way such that it doesn’t have tight coupling with the class hierarchy of the library
