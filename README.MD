@@ -14,7 +14,7 @@
 * Create static variable to hold the instance - make it volatile
 * Static Method to get singleton object
 
-`
+```
 public class LoggerUtil {
 	public static volatile LoggerUtil instance;
 	private LoggerUtil() {
@@ -29,7 +29,7 @@ public class LoggerUtil {
 		System.out.println(msg);
 	}
 }
-`
+```
 
 **Singleton in Mulithreading Environment** <br>
 
