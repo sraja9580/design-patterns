@@ -31,7 +31,7 @@ public class LoggerUtil {
 }
 ```
 
-**Singleton in Mulithreading Environment** <br>
+**Handle Mulithreading** <br>
 ```
 public static LoggerUtil getThreadSafeInstance() {
 		if (instance == null) {
@@ -56,4 +56,49 @@ public Object clone() throws CloneNotSupportedException {
 public Object readResolve() {
 	return getThreadSafeInstance();
 }	
+```
+**Proper Singleton with all cases handled** <br>
+```
+public class LoggerUtil implements Cloneable,Serializable{
+ 
+	private static final long serialVersionUID = 1L;
+	private static volatile LoggerUtil instance;
+
+	private LoggerUtil() {
+		System.out.println("IN CONSTRUCTOR");
+	}
+
+	public static LoggerUtil getInstance() {
+		if (instance == null) {
+			instance = new LoggerUtil();
+		}
+		return instance;
+	}
+
+	public static LoggerUtil getThreadSafeInstance() {
+		if (instance == null) {
+			synchronized (LoggerUtil.class) {
+				if (instance == null) {
+					instance = new LoggerUtil();
+				}
+			}
+		}
+		return instance;
+	}
+ 
+	public Object readResolve() {
+		return getThreadSafeInstance();
+	}
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		throw new CloneNotSupportedException();
+	}	
+	 
+	public void info(String msg) {
+		System.out.println(msg);
+	}
+
+}
+
 ```
