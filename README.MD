@@ -106,5 +106,46 @@ public class LoggerUtil implements Cloneable,Serializable{
 
 ```
 ## Factory Pattern
- Factory pattern, we create object without exposing the creation logic to client and the client use the same common interface to create new type of object.
+ In Factory pattern, we create object without exposing the creation logic to client and the client use the same common interface to create new type of object.
  A factory pattern is one of the core design principles to create an object, allowing clients to create objects of a library(explained below) in a way such that it doesn’t have tight coupling with the class hierarchy of the library
+**Interface and Implementation ** 
+ ```
+ interface FMCDJob {
+	void execute();
+}
+
+class FDSDealerJob implements FMCDJob{
+	@Override
+	public void execute() {
+		System.out.println("Executing NA FDSDealer job");
+	}	
+}
+
+class FDSEmpJob implements FMCDJob{
+	@Override
+	public void execute() {
+		System.out.println("Executing NA FDSEmployee job");
+	}	
+}
+ ```
+ **Factory ** 
+ ```
+ class FMCDJobFactory {
+	public static FMCDJob getJob(String jobName) {
+		FMCDJob fmcdJob = null;
+		if(jobName.equals("dealer")) {
+			fmcdJob = new FDSDealerJob();
+		}else if(jobName.equals("emp")) {
+			fmcdJob = new FDSEmpJob();
+		}
+		return fmcdJob;
+	}
+}
+
+public class FactoryPattern {
+	public static void main(String args[]) {
+		FMCDJobFactory.getJob("dealer").execute();
+		FMCDJobFactory.getJob("emp").execute();
+	}
+}
+ ```
