@@ -29,7 +29,6 @@ public class LoggerUtil {
 		System.out.println(msg);
 	}
 }
-
 `
 
 **Singleton in Mulithreading Environment** <br>
