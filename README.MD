@@ -52,6 +52,7 @@ public Object clone() throws CloneNotSupportedException {
 }	
 ```
 **Handle Serialization** <br>
+_When we desrialize the object from file new object will be created, we can avoid this by overriding **readResolve** of **Serializable** interface
 ```
 public Object readResolve() {
 	return getThreadSafeInstance();
