@@ -10,4 +10,7 @@
 # Creational Patterns
 * [Singleton](#singleton)
 ## Singleton
+* Make Constructor private
+* Create static variable to hold the instance - make it volatile
+* Static Method to get singleton object
 	
