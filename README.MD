@@ -32,4 +32,28 @@ public class LoggerUtil {
 ```
 
 **Singleton in Mulithreading Environment** <br>
-
+```
+public static LoggerUtil getThreadSafeInstance() {
+		if (instance == null) {
+			synchronized (LoggerUtil.class) {
+				if (instance == null) {
+					instance = new LoggerUtil();
+				}
+			}
+		}
+		return instance;
+	}
+```
+**Handle Cloning** <br>
+```
+@Override
+public Object clone() throws CloneNotSupportedException {
+	throw new CloneNotSupportedException();
+}	
+```
+**Handle Serialization** <br>
+```
+public Object readResolve() {
+	return getThreadSafeInstance();
+}	
+```
