@@ -107,9 +107,9 @@ public class LoggerUtil implements Cloneable,Serializable{
 ```
 ## Factory Pattern
  In Factory pattern, we create object without exposing the creation logic to client and the client use the same common interface to create new type of object.
- A factory pattern is one of the core design principles to create an object, allowing clients to create objects of a library(explained below) in a way such that it doesn’t have tight coupling with the class hierarchy of the library
-ex: ** java.util.Calendar **
-** Interface and Implementation ** 
+ A factory pattern is one of the core design principles to create an object, allowing clients to create objects of a library(explained below) in a way such that it doesn’t have tight coupling with the class hierarchy of the library <br> ex: **java.util.Calendar**<br>
+ 
+**Interface and Implementation** <br>
  ```
  interface FMCDJob {
 	void execute();
@@ -129,7 +129,7 @@ class FDSEmpJob implements FMCDJob{
 	}	
 }
  ```
- ** Factory ** 
+**Factory** 
  ```
  class FMCDJobFactory {
 	public static FMCDJob getJob(String jobName) {
