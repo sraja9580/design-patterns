@@ -31,5 +31,6 @@ public class LoggerUtil {
 }
 
 `
+
 **Singleton in Mulithreading Environment** <br>
 
