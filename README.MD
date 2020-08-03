@@ -5,7 +5,7 @@
 # Design Pattern Catolog
 * [Gang Of Four(CORE)](#core(gof)-design-patterns)
 	* [Creational Patterns](#creational-patterns)
-	* [Behavioural  Patterns](#behavioural-patterns)
+	* [Behavioural Patterns](#behavioural-patterns)
 * [J2EE Desing Patterns](#j2ee-design-patterns)
 	
 # Creational Patterns
@@ -152,7 +152,7 @@ public class FactoryPattern {
 	}
 }
  ```
-# Behavioural  Patterns
+# Behavioural Patterns
 * [Template Method pattern](#template-method-pattern)
  
 ## Template Method pattern
