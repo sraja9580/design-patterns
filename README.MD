@@ -150,3 +150,9 @@ public class FactoryPattern {
 	}
 }
  ```
+# Behavioural  Patterns
+* [Template Method pattern](#template-method-pattern)
+ 
+## Template Method pattern
+The Template Method pattern is known as a behavioural pattern,as it's used to manage algorithms, relationships and responsibilities between objects<br>
+_Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithms structure._
